@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.util.StdConverter;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.Marker;
 import org.apache.logging.log4j.ThreadContext;
+import org.apache.logging.log4j.core.impl.Log4jLogEvent;
 import org.apache.logging.log4j.core.impl.ThrowableProxy;
 import org.apache.logging.log4j.message.Message;
 
@@ -20,7 +21,7 @@ import java.util.Map;
  *
  * Created by jeremyfranklin-ross on 7/28/15.
  */
-public class LogStashLogEvent implements LogEvent{
+public class LogStashLogEvent extends Log4jLogEvent {
 
     static final String LOG_STASH_ISO8601_TIMESTAMP_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX";
     static final DateFormat iso8601DateFormat = new SimpleDateFormat(LOG_STASH_ISO8601_TIMESTAMP_FORMAT);
